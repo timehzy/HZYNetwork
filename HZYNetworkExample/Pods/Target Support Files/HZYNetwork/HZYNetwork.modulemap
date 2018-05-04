@@ -1,0 +1,6 @@
+framework module HZYNetwork {
+  umbrella header "HZYNetwork-umbrella.h"
+
+  export *
+  module * { export * }
+}

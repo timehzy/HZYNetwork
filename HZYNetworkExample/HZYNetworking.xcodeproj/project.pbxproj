@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183FD35A58CD74BD03A2E8A9 /* Pods_HZYNetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D794EFEF05A0D1875ADF07 /* Pods_HZYNetworkingTests.framework */; };
 		405E7DB9209C7A460005FF16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7DB8209C7A460005FF16 /* AppDelegate.m */; };
-		405E7DBC209C7A460005FF16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7DBB209C7A460005FF16 /* ViewController.m */; };
 		405E7DBF209C7A460005FF16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E7DBD209C7A460005FF16 /* Main.storyboard */; };
 		405E7DC1209C7A480005FF16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 405E7DC0209C7A480005FF16 /* Assets.xcassets */; };
 		405E7DC4209C7A480005FF16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E7DC2209C7A480005FF16 /* LaunchScreen.storyboard */; };
 		405E7DC7209C7A480005FF16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7DC6209C7A480005FF16 /* main.m */; };
 		405E7DD1209C7A480005FF16 /* HZYNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7DD0209C7A480005FF16 /* HZYNetworkingTests.m */; };
 		405E7DDC209C7A480005FF16 /* HZYNetworkingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7DDB209C7A480005FF16 /* HZYNetworkingUITests.m */; };
+		405E7E1D209C81DF0005FF16 /* HZYDemoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7E12209C81DF0005FF16 /* HZYDemoRequest.m */; };
+		405E7E1E209C81DF0005FF16 /* HZYDemoReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7E16209C81DF0005FF16 /* HZYDemoReformer.m */; };
+		405E7E1F209C81DF0005FF16 /* HZYDemoAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7E18209C81DF0005FF16 /* HZYDemoAccessory.m */; };
+		405E7E20209C81DF0005FF16 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7E19209C81DF0005FF16 /* LoginView.m */; };
+		405E7E21209C81DF0005FF16 /* HZYNetworkDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7E1A209C81DF0005FF16 /* HZYNetworkDemoController.m */; };
+		405E7E22209C81DF0005FF16 /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7E1B209C81DF0005FF16 /* MessageView.m */; };
+		5DE8AF60E1627A6D5217077C /* Pods_HZYNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5308B8BA17569FE865526FE /* Pods_HZYNetworking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07D794EFEF05A0D1875ADF07 /* Pods_HZYNetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HZYNetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F2F8249874F375C85F21398 /* Pods-HZYNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-HZYNetworking/Pods-HZYNetworking.release.xcconfig"; sourceTree = "<group>"; };
+		2EDBB910CC0B0D29B38FE943 /* Pods-HZYNetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYNetworkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HZYNetworkingTests/Pods-HZYNetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
 		405E7DB4209C7A460005FF16 /* HZYNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZYNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405E7DB7209C7A460005FF16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		405E7DB8209C7A460005FF16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		405E7DBA209C7A460005FF16 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		405E7DBB209C7A460005FF16 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		405E7DBE209C7A460005FF16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		405E7DC0209C7A480005FF16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		405E7DC3209C7A480005FF16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +59,21 @@
 		405E7DD7209C7A480005FF16 /* HZYNetworkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZYNetworkingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		405E7DDB209C7A480005FF16 /* HZYNetworkingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYNetworkingUITests.m; sourceTree = "<group>"; };
 		405E7DDD209C7A480005FF16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		405E7E11209C81DF0005FF16 /* HZYDemoAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYDemoAccessory.h; sourceTree = "<group>"; };
+		405E7E12209C81DF0005FF16 /* HZYDemoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZYDemoRequest.m; sourceTree = "<group>"; };
+		405E7E13209C81DF0005FF16 /* HZYNetworkDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYNetworkDemoController.h; sourceTree = "<group>"; };
+		405E7E14209C81DF0005FF16 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		405E7E15209C81DF0005FF16 /* MessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
+		405E7E16209C81DF0005FF16 /* HZYDemoReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZYDemoReformer.m; sourceTree = "<group>"; };
+		405E7E17209C81DF0005FF16 /* HZYDemoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYDemoRequest.h; sourceTree = "<group>"; };
+		405E7E18209C81DF0005FF16 /* HZYDemoAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZYDemoAccessory.m; sourceTree = "<group>"; };
+		405E7E19209C81DF0005FF16 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		405E7E1A209C81DF0005FF16 /* HZYNetworkDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZYNetworkDemoController.m; sourceTree = "<group>"; };
+		405E7E1B209C81DF0005FF16 /* MessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
+		405E7E1C209C81DF0005FF16 /* HZYDemoReformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYDemoReformer.h; sourceTree = "<group>"; };
+		A5308B8BA17569FE865526FE /* Pods_HZYNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HZYNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E22A4F26E732BD874B7DEB78 /* Pods-HZYNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZYNetworking/Pods-HZYNetworking.debug.xcconfig"; sourceTree = "<group>"; };
+		FA4867C8F0D4CF2BF27755C1 /* Pods-HZYNetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYNetworkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZYNetworkingTests/Pods-HZYNetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DE8AF60E1627A6D5217077C /* Pods_HZYNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183FD35A58CD74BD03A2E8A9 /* Pods_HZYNetworkingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E48BB9BFD49C5C6810E0108 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5308B8BA17569FE865526FE /* Pods_HZYNetworking.framework */,
+				07D794EFEF05A0D1875ADF07 /* Pods_HZYNetworkingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		405E7DAB209C7A460005FF16 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +119,8 @@
 				405E7DCF209C7A480005FF16 /* HZYNetworkingTests */,
 				405E7DDA209C7A480005FF16 /* HZYNetworkingUITests */,
 				405E7DB5209C7A460005FF16 /* Products */,
+				BFC16D98287ED71B036AAD56 /* Pods */,
+				0E48BB9BFD49C5C6810E0108 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,13 +139,12 @@
 			children = (
 				405E7DB7209C7A460005FF16 /* AppDelegate.h */,
 				405E7DB8209C7A460005FF16 /* AppDelegate.m */,
-				405E7DBA209C7A460005FF16 /* ViewController.h */,
-				405E7DBB209C7A460005FF16 /* ViewController.m */,
 				405E7DBD209C7A460005FF16 /* Main.storyboard */,
 				405E7DC0209C7A480005FF16 /* Assets.xcassets */,
 				405E7DC2209C7A480005FF16 /* LaunchScreen.storyboard */,
 				405E7DC5209C7A480005FF16 /* Info.plist */,
 				405E7DC6209C7A480005FF16 /* main.m */,
+				405E7E10209C81DF0005FF16 /* HZYNetworkDemo */,
 			);
 			path = HZYNetworking;
 			sourceTree = "<group>";
@@ -132,6 +167,36 @@
 			path = HZYNetworkingUITests;
 			sourceTree = "<group>";
 		};
+		405E7E10209C81DF0005FF16 /* HZYNetworkDemo */ = {
+			isa = PBXGroup;
+			children = (
+				405E7E13209C81DF0005FF16 /* HZYNetworkDemoController.h */,
+				405E7E1A209C81DF0005FF16 /* HZYNetworkDemoController.m */,
+				405E7E14209C81DF0005FF16 /* LoginView.h */,
+				405E7E19209C81DF0005FF16 /* LoginView.m */,
+				405E7E15209C81DF0005FF16 /* MessageView.h */,
+				405E7E1B209C81DF0005FF16 /* MessageView.m */,
+				405E7E17209C81DF0005FF16 /* HZYDemoRequest.h */,
+				405E7E12209C81DF0005FF16 /* HZYDemoRequest.m */,
+				405E7E1C209C81DF0005FF16 /* HZYDemoReformer.h */,
+				405E7E16209C81DF0005FF16 /* HZYDemoReformer.m */,
+				405E7E11209C81DF0005FF16 /* HZYDemoAccessory.h */,
+				405E7E18209C81DF0005FF16 /* HZYDemoAccessory.m */,
+			);
+			path = HZYNetworkDemo;
+			sourceTree = SOURCE_ROOT;
+		};
+		BFC16D98287ED71B036AAD56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E22A4F26E732BD874B7DEB78 /* Pods-HZYNetworking.debug.xcconfig */,
+				1F2F8249874F375C85F21398 /* Pods-HZYNetworking.release.xcconfig */,
+				FA4867C8F0D4CF2BF27755C1 /* Pods-HZYNetworkingTests.debug.xcconfig */,
+				2EDBB910CC0B0D29B38FE943 /* Pods-HZYNetworkingTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 405E7DE0209C7A480005FF16 /* Build configuration list for PBXNativeTarget "HZYNetworking" */;
 			buildPhases = (
+				EB3990823C4577EBBF7D8AE8 /* [CP] Check Pods Manifest.lock */,
 				405E7DB0209C7A460005FF16 /* Sources */,
 				405E7DB1209C7A460005FF16 /* Frameworks */,
 				405E7DB2209C7A460005FF16 /* Resources */,
+				550BB62BF548017EA865E392 /* [CP] Embed Pods Frameworks */,
+				933816346F7D90A5EC3A358F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,9 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 405E7DE3209C7A480005FF16 /* Build configuration list for PBXNativeTarget "HZYNetworkingTests" */;
 			buildPhases = (
+				6E0839FCDD89EE5D51E408F8 /* [CP] Check Pods Manifest.lock */,
 				405E7DC8209C7A480005FF16 /* Sources */,
 				405E7DC9209C7A480005FF16 /* Frameworks */,
 				405E7DCA209C7A480005FF16 /* Resources */,
+				08AAAA13A1947897991DFD4F /* [CP] Embed Pods Frameworks */,
+				49A9B96F6537190D14A64A26 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,14 +328,125 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08AAAA13A1947897991DFD4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HZYNetworkingTests/Pods-HZYNetworkingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49A9B96F6537190D14A64A26 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HZYNetworkingTests/Pods-HZYNetworkingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		550BB62BF548017EA865E392 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HZYNetworking/Pods-HZYNetworking-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/HZYNetwork/HZYNetwork.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HZYNetwork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HZYNetworking/Pods-HZYNetworking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E0839FCDD89EE5D51E408F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HZYNetworkingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		933816346F7D90A5EC3A358F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HZYNetworking/Pods-HZYNetworking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB3990823C4577EBBF7D8AE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HZYNetworking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		405E7DB0209C7A460005FF16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				405E7DBC209C7A460005FF16 /* ViewController.m in Sources */,
+				405E7E22209C81DF0005FF16 /* MessageView.m in Sources */,
+				405E7E1D209C81DF0005FF16 /* HZYDemoRequest.m in Sources */,
+				405E7E20209C81DF0005FF16 /* LoginView.m in Sources */,
 				405E7DC7209C7A480005FF16 /* main.m in Sources */,
 				405E7DB9209C7A460005FF16 /* AppDelegate.m in Sources */,
+				405E7E1E209C81DF0005FF16 /* HZYDemoReformer.m in Sources */,
+				405E7E1F209C81DF0005FF16 /* HZYDemoAccessory.m in Sources */,
+				405E7E21209C81DF0005FF16 /* HZYNetworkDemoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +613,7 @@
 		};
 		405E7DE1209C7A480005FF16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E22A4F26E732BD874B7DEB78 /* Pods-HZYNetworking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +631,7 @@
 		};
 		405E7DE2209C7A480005FF16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F2F8249874F375C85F21398 /* Pods-HZYNetworking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -465,6 +649,7 @@
 		};
 		405E7DE4209C7A480005FF16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA4867C8F0D4CF2BF27755C1 /* Pods-HZYNetworkingTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +669,7 @@
 		};
 		405E7DE5209C7A480005FF16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EDBB910CC0B0D29B38FE943 /* Pods-HZYNetworkingTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

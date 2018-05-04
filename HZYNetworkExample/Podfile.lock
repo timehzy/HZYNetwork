@@ -1,0 +1,36 @@
+PODS:
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
+    - AFNetworking/NSURLSession
+  - HZYNetwork (1.0.0):
+    - AFNetworking
+  - JSONModel (1.7.0)
+
+DEPENDENCIES:
+  - HZYNetwork (from `../`)
+  - JSONModel
+
+EXTERNAL SOURCES:
+  HZYNetwork:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  HZYNetwork: d0d0cbea8d3a533ffaa83fbbff714f6544c63147
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+
+PODFILE CHECKSUM: ff76f3f1fbd35426dbe18c2350e87e8c0258291d
+
+COCOAPODS: 1.4.0

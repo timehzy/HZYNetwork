@@ -1,10 +1,9 @@
 use_frameworks!
- 
-source 'http://gitlab.58corp.com/IOSMis/MIS-Specs.git'
-source 'https://github.com/CocoaPods/Specs.git'
-#source 'https://github.com/timehzy/PrivatePodRepo.git'
 
-target 'MISPackagesTest' do
-  pod 'MSFoundation'
-#  pod 'MyFirstLib'
+target 'HZYNetworking' do
+  pod 'HZYNetwork', :path => '../'
+  pod 'JSONModel'
+  target 'HZYNetworkingTests' do
+      inherit! :search_paths
+  end
 end

@@ -1,0 +1,6 @@
+framework module Pods_HZYNetworkingTests {
+  umbrella header "Pods-HZYNetworkingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

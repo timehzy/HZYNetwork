@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint MSFoundation.podspec' to ensure this is a
+# Be sure to run `pod lib lint HZYFoundation.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.ios.deployment_target = '8.0'
   # s.resource_bundles = {
-  #   'MSFoundation' => ['MSFoundation/Assets/**/*.png']
+  #   'HZYFoundation' => ['HZYFoundation/Assets/**/*.png']
   # }
   s.source_files = 'HZYNetwork/'
   # s.frameworks = 'UIKit', 'MapKit'
