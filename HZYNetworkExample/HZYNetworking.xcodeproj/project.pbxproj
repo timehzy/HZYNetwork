@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		405E7DB9209C7A460005FF16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7DB8209C7A460005FF16 /* AppDelegate.m */; };
+		405E7DBC209C7A460005FF16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7DBB209C7A460005FF16 /* ViewController.m */; };
+		405E7DBF209C7A460005FF16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E7DBD209C7A460005FF16 /* Main.storyboard */; };
+		405E7DC1209C7A480005FF16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 405E7DC0209C7A480005FF16 /* Assets.xcassets */; };
+		405E7DC4209C7A480005FF16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405E7DC2209C7A480005FF16 /* LaunchScreen.storyboard */; };
+		405E7DC7209C7A480005FF16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7DC6209C7A480005FF16 /* main.m */; };
+		405E7DD1209C7A480005FF16 /* HZYNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7DD0209C7A480005FF16 /* HZYNetworkingTests.m */; };
+		405E7DDC209C7A480005FF16 /* HZYNetworkingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 405E7DDB209C7A480005FF16 /* HZYNetworkingUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		405E7DCD209C7A480005FF16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 405E7DAC209C7A460005FF16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 405E7DB3209C7A460005FF16;
+			remoteInfo = HZYNetworking;
+		};
+		405E7DD8209C7A480005FF16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 405E7DAC209C7A460005FF16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 405E7DB3209C7A460005FF16;
+			remoteInfo = HZYNetworking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		405E7DB4209C7A460005FF16 /* HZYNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZYNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		405E7DB7209C7A460005FF16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		405E7DB8209C7A460005FF16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		405E7DBA209C7A460005FF16 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		405E7DBB209C7A460005FF16 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		405E7DBE209C7A460005FF16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		405E7DC0209C7A480005FF16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		405E7DC3209C7A480005FF16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		405E7DC5209C7A480005FF16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		405E7DC6209C7A480005FF16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		405E7DCC209C7A480005FF16 /* HZYNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZYNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		405E7DD0209C7A480005FF16 /* HZYNetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYNetworkingTests.m; sourceTree = "<group>"; };
+		405E7DD2209C7A480005FF16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		405E7DD7209C7A480005FF16 /* HZYNetworkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HZYNetworkingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		405E7DDB209C7A480005FF16 /* HZYNetworkingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYNetworkingUITests.m; sourceTree = "<group>"; };
+		405E7DDD209C7A480005FF16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		405E7DB1209C7A460005FF16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		405E7DC9209C7A480005FF16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		405E7DD4209C7A480005FF16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		405E7DAB209C7A460005FF16 = {
+			isa = PBXGroup;
+			children = (
+				405E7DB6209C7A460005FF16 /* HZYNetworking */,
+				405E7DCF209C7A480005FF16 /* HZYNetworkingTests */,
+				405E7DDA209C7A480005FF16 /* HZYNetworkingUITests */,
+				405E7DB5209C7A460005FF16 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		405E7DB5209C7A460005FF16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				405E7DB4209C7A460005FF16 /* HZYNetworking.app */,
+				405E7DCC209C7A480005FF16 /* HZYNetworkingTests.xctest */,
+				405E7DD7209C7A480005FF16 /* HZYNetworkingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		405E7DB6209C7A460005FF16 /* HZYNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				405E7DB7209C7A460005FF16 /* AppDelegate.h */,
+				405E7DB8209C7A460005FF16 /* AppDelegate.m */,
+				405E7DBA209C7A460005FF16 /* ViewController.h */,
+				405E7DBB209C7A460005FF16 /* ViewController.m */,
+				405E7DBD209C7A460005FF16 /* Main.storyboard */,
+				405E7DC0209C7A480005FF16 /* Assets.xcassets */,
+				405E7DC2209C7A480005FF16 /* LaunchScreen.storyboard */,
+				405E7DC5209C7A480005FF16 /* Info.plist */,
+				405E7DC6209C7A480005FF16 /* main.m */,
+			);
+			path = HZYNetworking;
+			sourceTree = "<group>";
+		};
+		405E7DCF209C7A480005FF16 /* HZYNetworkingTests */ = {
+			isa = PBXGroup;
+			children = (
+				405E7DD0209C7A480005FF16 /* HZYNetworkingTests.m */,
+				405E7DD2209C7A480005FF16 /* Info.plist */,
+			);
+			path = HZYNetworkingTests;
+			sourceTree = "<group>";
+		};
+		405E7DDA209C7A480005FF16 /* HZYNetworkingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				405E7DDB209C7A480005FF16 /* HZYNetworkingUITests.m */,
+				405E7DDD209C7A480005FF16 /* Info.plist */,
+			);
+			path = HZYNetworkingUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		405E7DB3209C7A460005FF16 /* HZYNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 405E7DE0209C7A480005FF16 /* Build configuration list for PBXNativeTarget "HZYNetworking" */;
+			buildPhases = (
+				405E7DB0209C7A460005FF16 /* Sources */,
+				405E7DB1209C7A460005FF16 /* Frameworks */,
+				405E7DB2209C7A460005FF16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HZYNetworking;
+			productName = HZYNetworking;
+			productReference = 405E7DB4209C7A460005FF16 /* HZYNetworking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		405E7DCB209C7A480005FF16 /* HZYNetworkingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 405E7DE3209C7A480005FF16 /* Build configuration list for PBXNativeTarget "HZYNetworkingTests" */;
+			buildPhases = (
+				405E7DC8209C7A480005FF16 /* Sources */,
+				405E7DC9209C7A480005FF16 /* Frameworks */,
+				405E7DCA209C7A480005FF16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				405E7DCE209C7A480005FF16 /* PBXTargetDependency */,
+			);
+			name = HZYNetworkingTests;
+			productName = HZYNetworkingTests;
+			productReference = 405E7DCC209C7A480005FF16 /* HZYNetworkingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		405E7DD6209C7A480005FF16 /* HZYNetworkingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 405E7DE6209C7A480005FF16 /* Build configuration list for PBXNativeTarget "HZYNetworkingUITests" */;
+			buildPhases = (
+				405E7DD3209C7A480005FF16 /* Sources */,
+				405E7DD4209C7A480005FF16 /* Frameworks */,
+				405E7DD5209C7A480005FF16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				405E7DD9209C7A480005FF16 /* PBXTargetDependency */,
+			);
+			name = HZYNetworkingUITests;
+			productName = HZYNetworkingUITests;
+			productReference = 405E7DD7209C7A480005FF16 /* HZYNetworkingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		405E7DAC209C7A460005FF16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = com.Michael.networking;
+				TargetAttributes = {
+					405E7DB3209C7A460005FF16 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					405E7DCB209C7A480005FF16 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 405E7DB3209C7A460005FF16;
+					};
+					405E7DD6209C7A480005FF16 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 405E7DB3209C7A460005FF16;
+					};
+				};
+			};
+			buildConfigurationList = 405E7DAF209C7A460005FF16 /* Build configuration list for PBXProject "HZYNetworking" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 405E7DAB209C7A460005FF16;
+			productRefGroup = 405E7DB5209C7A460005FF16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				405E7DB3209C7A460005FF16 /* HZYNetworking */,
+				405E7DCB209C7A480005FF16 /* HZYNetworkingTests */,
+				405E7DD6209C7A480005FF16 /* HZYNetworkingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		405E7DB2209C7A460005FF16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				405E7DC4209C7A480005FF16 /* LaunchScreen.storyboard in Resources */,
+				405E7DC1209C7A480005FF16 /* Assets.xcassets in Resources */,
+				405E7DBF209C7A460005FF16 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		405E7DCA209C7A480005FF16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		405E7DD5209C7A480005FF16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		405E7DB0209C7A460005FF16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				405E7DBC209C7A460005FF16 /* ViewController.m in Sources */,
+				405E7DC7209C7A480005FF16 /* main.m in Sources */,
+				405E7DB9209C7A460005FF16 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		405E7DC8209C7A480005FF16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				405E7DD1209C7A480005FF16 /* HZYNetworkingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		405E7DD3209C7A480005FF16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				405E7DDC209C7A480005FF16 /* HZYNetworkingUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		405E7DCE209C7A480005FF16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 405E7DB3209C7A460005FF16 /* HZYNetworking */;
+			targetProxy = 405E7DCD209C7A480005FF16 /* PBXContainerItemProxy */;
+		};
+		405E7DD9209C7A480005FF16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 405E7DB3209C7A460005FF16 /* HZYNetworking */;
+			targetProxy = 405E7DD8209C7A480005FF16 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		405E7DBD209C7A460005FF16 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				405E7DBE209C7A460005FF16 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		405E7DC2209C7A480005FF16 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				405E7DC3209C7A480005FF16 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		405E7DDE209C7A480005FF16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		405E7DDF209C7A480005FF16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		405E7DE1209C7A480005FF16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65BZ7J45PP;
+				INFOPLIST_FILE = HZYNetworking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Michael.HZYNetworking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		405E7DE2209C7A480005FF16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65BZ7J45PP;
+				INFOPLIST_FILE = HZYNetworking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Michael.HZYNetworking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		405E7DE4209C7A480005FF16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65BZ7J45PP;
+				INFOPLIST_FILE = HZYNetworkingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Michael.HZYNetworkingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HZYNetworking.app/HZYNetworking";
+			};
+			name = Debug;
+		};
+		405E7DE5209C7A480005FF16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65BZ7J45PP;
+				INFOPLIST_FILE = HZYNetworkingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Michael.HZYNetworkingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HZYNetworking.app/HZYNetworking";
+			};
+			name = Release;
+		};
+		405E7DE7209C7A480005FF16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65BZ7J45PP;
+				INFOPLIST_FILE = HZYNetworkingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Michael.HZYNetworkingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HZYNetworking;
+			};
+			name = Debug;
+		};
+		405E7DE8209C7A480005FF16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65BZ7J45PP;
+				INFOPLIST_FILE = HZYNetworkingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Michael.HZYNetworkingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HZYNetworking;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		405E7DAF209C7A460005FF16 /* Build configuration list for PBXProject "HZYNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				405E7DDE209C7A480005FF16 /* Debug */,
+				405E7DDF209C7A480005FF16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		405E7DE0209C7A480005FF16 /* Build configuration list for PBXNativeTarget "HZYNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				405E7DE1209C7A480005FF16 /* Debug */,
+				405E7DE2209C7A480005FF16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		405E7DE3209C7A480005FF16 /* Build configuration list for PBXNativeTarget "HZYNetworkingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				405E7DE4209C7A480005FF16 /* Debug */,
+				405E7DE5209C7A480005FF16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		405E7DE6209C7A480005FF16 /* Build configuration list for PBXNativeTarget "HZYNetworkingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				405E7DE7209C7A480005FF16 /* Debug */,
+				405E7DE8209C7A480005FF16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 405E7DAC209C7A460005FF16 /* Project object */;
+}
