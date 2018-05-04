@@ -1,5 +1,9 @@
 # HZYNetwork
+## 使用Cocoapods
 
+```
+pod 'HZYNetwork'
+```
 ## 结构简述
 ### 类之间的关系
 ![类关系图](HZYNetwork.png)
