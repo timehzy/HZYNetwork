@@ -66,7 +66,7 @@ AFN对NSURLSession进行了封装，集中管理delegate，提供便利的NSURLS
 *CTAPIBaseManager.h -> 49行
 YTKBaseRequest.h -> 335行*
 说明一下，虽然命名不同，但二者在各自的框架中起到作用是相似的。那么为什么有这么大的差距呢？因为 CT 使用了面向协议的编程思想，CTAPIBaseManager 的接口只提供最基本的请求操作方法，如`- (NSInteger)loadData;`、`- (void)cancelAllRequests;`。而其他与请求弱相关或非必须实现的方法都丢给了不同的代理对象，如`paraHZYource`，`validator`等。这样做的好处就是极大的简化了接口，同时也不需要在基类的实现中写一大堆空方法。YTK 使用了最传统的面向对象思想，作为基类的YTKBaseRequest 必须实现所有原本是要给子类覆写的方法。所以你会看到它的实现文件中大量下面这样的方法，非常的不优雅：
-![屏幕快照 2018-04-23 下午5.26.01](media/15244623654728/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-23%20%E4%B8%8B%E5%8D%885.26.01.png)
+![YTKBaseReqeust](YTKBaseReqeust.png)
 
 基于此，HZYNetwork 也选择了面向协议的思想，HZYRequest 基类只提供最基本与请求强相关的属性和方法。如多重请求策略`strategy`，服务`service`，url`url`，以及`start`和`cancel`系列方法。将如回调代理、参数数据源、参数验证、数据重组等方法归集到各自的代理协议中，以代理的形式暴露。这样既简化了 HZYRequest 基类的接口、避免了大量无意义的空方法。同时这种设计思路也为今后的扩展提供了便利。
 
