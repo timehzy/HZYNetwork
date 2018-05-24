@@ -13,7 +13,7 @@
 @implementation MessageView
 - (void)requestDidSuccess:(HZYNetworkRequest *)request {
     HZYDemoModel *model = (HZYDemoModel *)request.response.responseObject;
-    self.text = model.HZYg;
+    self.text = model.msg;
 }
 
 - (void)requestDidFailed:(HZYNetworkRequest *)request {

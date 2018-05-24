@@ -1,9 +1,8 @@
 //
-//  HZYRequest.h
-//  HZYNetworkingDev
+//  HZYNetworkRequestFileData.h
 //
 //  Created by haozhenyi on 2018/4/17.
-//  Copyright © 2018年 com.58.HZY-Foundation. All rights reserved.
+//  Copyright © 2018年 郝振壹. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -29,9 +28,6 @@ FOUNDATION_EXPORT HZYNetworkRequestMethod const HEAD;
 FOUNDATION_EXPORT HZYNetworkRequestMethod const PUT;
 FOUNDATION_EXPORT HZYNetworkRequestMethod const DELETE;
 
-
-typedef void(^HZYNetworkRequestCallback)(HZYNetworkRequest *request);
-
 typedef NS_ENUM(NSUInteger, HZYNetworkRequestStrategy) {
     /// 允许相同的请求多次发起
     HZYNetworkRequestStrategyAllowMultiple = 0,
@@ -41,6 +37,19 @@ typedef NS_ENUM(NSUInteger, HZYNetworkRequestStrategy) {
     HZYNetworkRequestStrategyDiscardIfPreviousOnLoading,
 };
 
+typedef NS_ENUM(NSUInteger, HZYNetworkParameterType) {
+    HZYNetworkFormParameter,
+    HZYNetworkJSONParameter,
+};
+
+/*
+ 关于错误链的说明：
+ - 如果HTTP请求出现错误，错误会带给request:reformResponseObject:error:方法，所以建议使用该方法时，先判断error
+ - 上一步的错误会继续传递到request:isValidForResponseObject:error:，同样，建议使用时先判断error
+ - 最后如果error仍不为空，则此请求会被判断为失败，走失败回调
+ 使用建议，在以上任意一个环节实现相应方法时，先判断error是否为空，如果不为空则不要做任何操作，直接将第一错误抛给上层。
+ */
+
 @interface HZYNetworkRequest : NSObject
 
 /**
@@ -48,7 +57,6 @@ typedef NS_ENUM(NSUInteger, HZYNetworkRequestStrategy) {
  @discussion 可以通过代理获得请求的响应和上传下载的进度。如果使用block回调的方式，并且不需要进度，则不需要设置
  */
 @property (nonatomic, weak, nullable) id<HZYNetworkRequestDelegate> delegate;
-/** 请求参数数据源 */
 @property (nonatomic, weak, nullable) id<HZYNetworkRequestParameterSource> parameterSource;
 /** 验证器 */
 @property (nonatomic, weak, nullable) id<HZYNetworkRequestValidator> validator;
@@ -60,30 +68,23 @@ typedef NS_ENUM(NSUInteger, HZYNetworkRequestStrategy) {
 @property (nonatomic, weak) id<HZYNetworkRequestConfiguration> configurator;
 /** 插件 */
 @property (nonatomic, strong) NSMutableArray<id<HZYNetworkRequestAccessory>> *accessories;
-/** 请求方法 */
-@property (nonatomic, copy, readonly) HZYNetworkRequestMethod method;
-/** 响应 */
-@property (nonatomic, strong, readonly) HZYNetworkResponse *response;
+@property (nonatomic, readonly) HZYNetworkRequestMethod method;
+@property (nonatomic, readonly) HZYNetworkResponse *response;
 /** 请求策略，用于管理相同请求多发的方式 */
 @property (nonatomic, assign) HZYNetworkRequestStrategy strategy;
 /** 由该类发出的请求是否完成，全部完成时返回NO，否则返回YES */
-@property (nonatomic, assign, readonly) BOOL isLoading;
+@property (nonatomic, readonly) BOOL isLoading;
 
 #pragma mark - override method
 - (NSString *)url;
 
 #pragma mark - init method
-/**
- 指定初始化方法，-init方法会返回GET请求
- 
- @param method 请求所要使用的HTTP方法
- @return HZYRequest实例
- */
+
 - (instancetype)initWithMethod:(HZYNetworkRequestMethod)method NS_DESIGNATED_INITIALIZER;
 
-/** 获取GET请求 */
+/** GET请求 */
 + (instancetype)requstUsingGETMethod;
-/** 获取POST请求 */
+/** POST请求 */
 + (instancetype)requstUsingPOSTMethod;
 
 #pragma mark - action method
@@ -102,8 +103,8 @@ typedef NS_ENUM(NSUInteger, HZYNetworkRequestStrategy) {
  @param failureCallback 失败的回调
  @return 请求的ID，可以用于后续取消该请求
  */
-- (NSUInteger)startWithSuccess:(HZYNetworkRequestCallback _Nullable)successCallback
-                      failure:(HZYNetworkRequestCallback _Nullable)failureCallback;
+- (NSUInteger)startWithSuccess:(void(^)(HZYNetworkResponse *response))successCallback
+                       failure:(void(^)(HZYNetworkResponse *response))failureCallback;
 
 /**
  取消指定的请求
@@ -123,14 +124,17 @@ typedef NS_ENUM(NSUInteger, HZYNetworkRequestStrategy) {
  */
 @interface HZYNetworkRequest (InnerInterceptor)
 
-- (BOOL)beforePerforHZYuccess;
-- (void)afterPerforHZYuccess;
+/** 返回值决定是否最终执行成功回调 */
+- (BOOL)beforePerformSuccess;
+- (void)afterPerformSuccess;
 
+/** 返回值决定是否最终执行失败回调 */
 - (BOOL)beforePerformFailure;
 - (void)afterPerformFailure;
 
-- (BOOL)shouldStartWithParaHZY:(NSDictionary *_Nullable)paraHZY;
-- (void)afterStartWithParaHZY:(NSDictionary *_Nullable)paraHZY;
+/** 返回值决定是否执行请求，优先级在strategy之前 */
+- (BOOL)shouldStartWithParams:(NSDictionary *_Nullable)params;
+- (void)afterStartWithParams:(NSDictionary *_Nullable)params;
 
 @end
 
@@ -141,8 +145,8 @@ typedef NS_ENUM(NSUInteger, HZYNetworkRequestStrategy) {
 
 @optional
 
-- (void)requestDidSuccess:(HZYNetworkRequest *)request;
-- (void)requestDidFailed:(HZYNetworkRequest *)request;
+- (void)request:(HZYNetworkRequest *)request successWithResponse:(HZYNetworkResponse *)response;
+- (void)request:(HZYNetworkRequest *)request failWithResponse:(HZYNetworkResponse *)response;
 - (void)request:(HZYNetworkRequest *)request uploadProgress:(NSProgress *)progress;
 - (void)request:(HZYNetworkRequest *)request downloadProgress:(NSProgress *)progress;
 
@@ -155,6 +159,7 @@ typedef NS_ENUM(NSUInteger, HZYNetworkRequestStrategy) {
 
 @optional
 
+- (HZYNetworkParameterType)parameterType;
 - (NSDictionary *)parameterForRequest:(HZYNetworkRequest *)request;
 - (NSArray<id<HZYNetworkRequestFileDataProtocol>> *)filesDataForRequest:(HZYNetworkRequest *)request;
 
@@ -177,7 +182,7 @@ typedef NS_ENUM(NSUInteger, HZYNetworkRequestStrategy) {
  */
 @protocol HZYNetworkResponseReformer<NSObject>
 
-- (id)request:(HZYNetworkRequest *)request reformResponseObject:(id)responseObject;
+- (id)request:(HZYNetworkRequest *)request reformResponseObject:(id)responseObject error:(NSError **)error;
 
 @end
 
@@ -200,14 +205,14 @@ typedef NS_ENUM(NSUInteger, HZYNetworkRequestStrategy) {
  
  @return 要添加的请求头对象
  */
-- (NSDictionary<NSString *, NSString *> *)additionalHeaders;
+- (NSDictionary<NSString *, NSString *> *)additionalHeadersForRequest:(HZYNetworkRequest *)request;
 
 /**
  以自定义的请求头内容完全覆盖默认的请求头
  
  @return 要设置的请求头
  */
-- (NSDictionary<NSString *, NSString *> *)resetAllHeaders;
+- (NSDictionary<NSString *, NSString *> *)resetAllHeadersForRequest:(HZYNetworkRequest *)request;
 
 /**
  对请求参数进行最后配置

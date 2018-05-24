@@ -1,9 +1,8 @@
 //
-//  HZYNetworkProxy.m
-//  HZYNetworkingDev
+//  HZYNetworkAgent.m
 //
 //  Created by haozhenyi on 2018/4/17.
-//  Copyright © 2018年 com.58.HZY-Foundation. All rights reserved.
+//  Copyright © 2018年 郝振壹. All rights reserved.
 //
 
 #import "HZYNetworkAgent.h"
@@ -33,7 +32,7 @@ NSString * const HZYNetworkReachabilityNotificationStatusKey = @"HZYNetworkReach
     if (self = [super init]) {
         _manager = [AFHTTPSessionManager manager];
         _manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
-        _manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityStatusChanged:) name:AFNetworkingReachabilityDidChangeNotification object:nil];
     }
     return self;

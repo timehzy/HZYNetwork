@@ -1,8 +1,8 @@
 //
 //  HZYNetworkTask.m
-//  Pods
 //
 //  Created by haozhenyi on 2018/4/27.
+//  Copyright © 2018年 郝振壹. All rights reserved.
 //
 
 #import "HZYNetworkTask.h"

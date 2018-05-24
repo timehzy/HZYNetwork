@@ -70,10 +70,10 @@
 - (IBAction)uploadImageBtnTouched:(id)sender {
     HZYUploadImageRequest *uploadImage = [HZYUploadImageRequest requstUsingPOSTMethod];
     uploadImage.parameterSource = self;
-    [uploadImage startWithSuccess:^(HZYNetworkRequest * _Nonnull request) {
+    [uploadImage startWithSuccess:^(HZYNetworkResponse * _Nonnull response) {
         NSLog(@"upload image success");
-    } failure:^(HZYNetworkRequest * _Nonnull request) {
-        NSLog(@"upload image failed");
+    } failure:^(HZYNetworkResponse * _Nonnull response) {
+        NSLog(@"upload image failed");        
     }];
     uploadImage.delegate = self;
     self.uploadImageInfo = uploadImage;

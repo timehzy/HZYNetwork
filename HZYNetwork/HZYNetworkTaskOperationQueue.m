@@ -1,8 +1,8 @@
 //
-//  HZYNetworkTaskQueue.m
-//  Pods
+//  HZYNetworkTaskOperationQueue.m
 //
 //  Created by haozhenyi on 2018/4/27.
+//  Copyright © 2018年 郝振壹. All rights reserved.
 //
 
 #import "HZYNetworkTaskOperationQueue.h"
@@ -25,7 +25,7 @@
                                                   complete:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                                                       dispatch_semaphore_signal(self.semaphore);
                                                       if (task.completeBlock) {
-                                                          task.completeBlock (response,responseObject,error);
+                                                          task.completeBlock(response, responseObject, error);
                                                       }
                                                   }
                                             uploadProgress:task.uploadProgressBlock

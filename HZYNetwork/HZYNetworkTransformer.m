@@ -1,9 +1,8 @@
 //
-//  HZYNetworkService.m
-//  HZYNetworkingDev
+//  HZYNetworkTransformer.m
 //
 //  Created by haozhenyi on 2018/4/18.
-//  Copyright © 2018年 com.58.HZY-Foundation. All rights reserved.
+//  Copyright © 2018年 郝振壹. All rights reserved.
 //
 
 #import "HZYNetworkTransformer.h"
@@ -15,7 +14,7 @@
 @interface HZYNetworkTransformer ()
 
 @property (nonatomic, weak) HZYNetworkRequest *request;
-@property (nonatomic, strong) AFJSONRequestSerializer *httpRequestSerializer;
+@property (nonatomic, strong) AFHTTPRequestSerializer *httpRequestSerializer;
 
 @end
 
@@ -24,8 +23,20 @@
 - (instancetype)initWithRequest:(HZYNetworkRequest *)request {
     if (self = [super init]) {
         _request = request;
-        _httpRequestSerializer = [AFJSONRequestSerializer serializer];
-        [_httpRequestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        if ([request.parameterSource respondsToSelector:@selector(parameterType)]) {
+            switch (request.parameterSource.parameterType) {
+            case HZYNetworkFormParameter:
+                _httpRequestSerializer = [AFHTTPRequestSerializer serializer];
+                break;
+            case HZYNetworkJSONParameter:
+                _httpRequestSerializer = [AFJSONRequestSerializer serializer];
+                [_httpRequestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                break;
+            }
+            
+        } else {
+            _httpRequestSerializer = [AFHTTPRequestSerializer serializer];
+        }
     }
     return self;
 }
@@ -55,7 +66,7 @@
 
 - (NSString *)getUrlString {
     NSURL *requestUrl;
-    if ([self.request.configurator respondsToSelector:@selector(baseURL)]) {
+    if ([self.request.configurator respondsToSelector:@selector(baseUrl)]) {
         requestUrl = [NSURL URLWithString:self.request.url relativeToURL:self.request.configurator.baseUrl];
     } else {
         requestUrl = [NSURL URLWithString:self.request.url];
@@ -115,26 +126,28 @@
         } else {
             req.timeoutInterval = HZYNetworkRequestDefaultTimeoutInterval;
         }
-        if ([configurator respondsToSelector:@selector(additionalHeaders)]) {
-            [configurator.additionalHeaders enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
+        if ([configurator respondsToSelector:@selector(additionalHeadersForRequest:)]) {
+            [[configurator additionalHeadersForRequest:self.request] enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
                 [req addValue:obj forHTTPHeaderField:key];
             }];
-        } else if ([configurator respondsToSelector:@selector(resetAllHeaders)]) {
-            [req setAllHTTPHeaderFields:[configurator resetAllHeaders]];
+        } else if ([configurator respondsToSelector:@selector(resetAllHeadersForRequest:)]) {
+            [req setAllHTTPHeaderFields:[configurator resetAllHeadersForRequest:self.request]];
         }
     }
 }
 
 - (HZYNetworkResponse *)constructResponse:(NSURLResponse *)response responseObject:(id)object error:(NSError **)error requestId:(NSUInteger)requestId {
-    HZYNetworkResponse *res = [[HZYNetworkResponse alloc] initWithRequestId:requestId response:response responseObject:object error:*error];
-    [self reformResponseObjectForResponse:res];
-    [self isResponseValid:res error:error];
+    id reformedObject = [self reformResponseObject:object error:error];
+    [self isResponseValid:reformedObject error:error];
+    HZYNetworkResponse *res = [[HZYNetworkResponse alloc] initWithRequestId:requestId response:response responseObject:reformedObject error:*error];
     return res;
 }
 
-- (void)reformResponseObjectForResponse:(HZYNetworkResponse *)response {
-    if ([self.request.responseReformer respondsToSelector:@selector(request:reformResponseObject:)]) {
-        response.responseObject = [self.request.responseReformer request:self.request reformResponseObject:response.responseObject];
+- (id)reformResponseObject:(id)responseObject error:(NSError **)error {
+    if ([self.request.responseReformer respondsToSelector:@selector(request:reformResponseObject:error:)]) {
+        return [self.request.responseReformer request:self.request reformResponseObject:responseObject error:error];
+    } else {
+        return responseObject;
     }
 }
 

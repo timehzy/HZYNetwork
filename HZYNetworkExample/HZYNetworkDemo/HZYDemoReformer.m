@@ -19,15 +19,15 @@
     return refomer;
 }
 
-- (id)request:(HZYNetworkRequest *)request reformResponseObject:(id)responseObject {
+- (id)request:(HZYNetworkRequest *)request reformResponseObject:(id)responseObject error:(NSError * _Nullable __autoreleasing * _Nullable)error {
+    if (*error) return responseObject;
     if ([self.modelClass isSubclassOfClass:JSONModel.class]) {
-        NSError *error = nil;
-        id jsonModel = [[self.modelClass alloc] initWithDictionary:responseObject error:&error];
-        if (!error) {
+        id jsonModel = [[self.modelClass alloc] initWithDictionary:responseObject error:error];
+        if (!*error) {
             return jsonModel;
         }
     }
-    return nil;
+    return responseObject;
 }
 
 @end

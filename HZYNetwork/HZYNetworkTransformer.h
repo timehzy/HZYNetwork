@@ -1,9 +1,8 @@
 //
-//  HZYNetworkService.h
-//  HZYNetworkingDev
+//  HZYNetworkTransformer.h
 //
 //  Created by haozhenyi on 2018/4/18.
-//  Copyright © 2018年 com.58.HZY-Foundation. All rights reserved.
+//  Copyright © 2018年 郝振壹. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

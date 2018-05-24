@@ -1,8 +1,8 @@
 //
 //  HZYNetworkBatchRequest.m
-//  AFNetworking
 //
 //  Created by haozhenyi on 2018/4/28.
+//  Copyright © 2018年 郝振壹. All rights reserved.
 //
 
 #import "HZYNetworkBatchRequest.h"
@@ -38,12 +38,12 @@
     __weak typeof(self) weakSelf = self;
     [requests enumerateObjectsUsingBlock:^(HZYNetworkRequest * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         dispatch_group_enter(weakSelf.group);
-        [obj startWithSuccess:^(HZYNetworkRequest * _Nonnull request) {
+        [obj startWithSuccess:^(HZYNetworkResponse * _Nonnull response) {
             dispatch_group_leave(weakSelf.group);
-            [weakSelf.successRequests addObject:request];
-        } failure:^(HZYNetworkRequest * _Nonnull request) {
+            [weakSelf.successRequests addObject:obj];
+        } failure:^(HZYNetworkResponse * _Nonnull response) {
             dispatch_group_leave(weakSelf.group);
-            [weakSelf.failedRequests addObject:request];
+            [weakSelf.failedRequests addObject:obj];            
         }];
     }];
 

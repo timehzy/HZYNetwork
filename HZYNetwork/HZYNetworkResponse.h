@@ -1,9 +1,8 @@
 //
 //  HZYNetworkResponse.h
-//  HZYNetworkingDev
 //
 //  Created by haozhenyi on 2018/4/17.
-//  Copyright © 2018年 com.58.HZY-Foundation. All rights reserved.
+//  Copyright © 2018年 郝振壹. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -17,7 +16,7 @@
 /** 由NSURLSessionDataTask返回的response */
 @property (nonatomic, readonly) NSURLResponse *originResponse;
 /** 响应内容 */
-@property (nonatomic, strong) id responseObject;
+@property (nonatomic, readonly) id responseObject;
 
 /**
  指定初始化方法

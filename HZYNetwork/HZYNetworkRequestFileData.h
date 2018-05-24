@@ -1,9 +1,8 @@
 //
-//  HZYRequestFileData.h
-//  MISNetworkingDev
+//  HZYNetworkRequestFileData.h
 //
 //  Created by haozhenyi on 2018/4/24.
-//  Copyright © 2018年 com.58.MIS-Foundation. All rights reserved.
+//  Copyright © 2018年 郝振壹. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

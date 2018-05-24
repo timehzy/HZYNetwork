@@ -1,9 +1,8 @@
 //
-//  HZYRequest.m
-//  HZYNetworkingDev
+//  HZYNetworkRequestFileData.m
 //
 //  Created by haozhenyi on 2018/4/17.
-//  Copyright © 2018年 com.58.HZY-Foundation. All rights reserved.
+//  Copyright © 2018年 郝振壹. All rights reserved.
 //
 
 #import "HZYNetworkRequest.h"
@@ -28,8 +27,8 @@ typedef struct _DelegateFlags{
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *requestIds;
 @property (nonatomic, strong) HZYNetworkResponse *response;
 @property (nonatomic, strong) HZYNetworkTransformer *transformer;
-@property (nonatomic, copy) HZYNetworkRequestCallback successBlock;
-@property (nonatomic, copy) HZYNetworkRequestCallback failureBlock;
+@property (nonatomic, copy) void(^successBlock)(HZYNetworkResponse *response);
+@property (nonatomic, copy) void(^failureBlock)(HZYNetworkResponse *response);
 
 @end
 
@@ -67,7 +66,7 @@ typedef struct _DelegateFlags{
     return [self startRequest];
 }
 
-- (NSUInteger)startWithSuccess:(HZYNetworkRequestCallback)successCallback failure:(HZYNetworkRequestCallback)failureCallback {
+- (NSUInteger)startWithSuccess:(void(^)(HZYNetworkResponse *response))successCallback failure:(void(^)(HZYNetworkResponse *response))failureCallback {
     self.successBlock = successCallback;
     self.failureBlock = failureCallback;
     return [self startRequest];
@@ -79,9 +78,9 @@ typedef struct _DelegateFlags{
     if ([self.parameterSource respondsToSelector:@selector(parameterForRequest:)]) {
         param = [self.parameterSource parameterForRequest:self];
     }
-    if (![self shouldStartWithParaHZY:param]) {return identifier;}
+    if (![self shouldStartWithParams:param]) {return identifier;}
     // 执行多请求策略
-    if ([self perforHZYtrategy]) {return self.requestIds.firstObject.unsignedIntegerValue;}
+    if ([self performStrategy]) {return self.requestIds.firstObject.unsignedIntegerValue;}
     // 创建NSURLRequest对象
     NSURLRequest *request = [self createRequest];
     if (!request) {return identifier;}
@@ -95,9 +94,9 @@ typedef struct _DelegateFlags{
                 [self afterPerformFailure];
             }
         } else {
-            if ([self beforePerforHZYuccess]) {
+            if ([self beforePerformSuccess]) {
                 [self successResponse];
-                [self afterPerforHZYuccess];
+                [self afterPerformSuccess];
             }
         }
         @synchronized(self.requestIds) {[self.requestIds removeObject:@(identifier)];}
@@ -106,7 +105,7 @@ typedef struct _DelegateFlags{
     } download:^(NSProgress *progress) {
         if (self.delegateFlag.downloadProgress) {[self.delegate request:self downloadProgress:progress];}
     }];
-    [self afterStartWithParaHZY:param];
+    [self afterStartWithParams:param];
     identifier = [[HZYNetworkManager sharedManager] addTask:task];
     @synchronized(self.requestIds) {[self.requestIds addObject:@(identifier)];}
     return identifier;
@@ -128,7 +127,7 @@ typedef struct _DelegateFlags{
     }
 }
 
-- (void)accessoriesPerforHZYelector:(SEL)selector {
+- (void)accessoriesPerformSelector:(SEL)selector {
     if (self.accessories.count) {
         [self.accessories enumerateObjectsUsingBlock:^(id<HZYNetworkRequestAccessory>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj respondsToSelector:selector]) {
@@ -141,12 +140,12 @@ typedef struct _DelegateFlags{
     }
 }
 
-- (BOOL)beforePerforHZYuccess {
+- (BOOL)beforePerformSuccess {
     return YES;
 }
 
-- (void)afterPerforHZYuccess {
-    [self accessoriesPerforHZYelector:@selector(requestDidFinished:)];
+- (void)afterPerformSuccess {
+    [self accessoriesPerformSelector:@selector(requestDidFinished:)];
 }
 
 - (BOOL)beforePerformFailure {
@@ -154,26 +153,32 @@ typedef struct _DelegateFlags{
 }
 
 - (void)afterPerformFailure {
-    [self accessoriesPerforHZYelector:@selector(requestDidFinished:)];
+    [self accessoriesPerformSelector:@selector(requestDidFinished:)];
 }
 
-- (BOOL)shouldStartWithParaHZY:(NSDictionary *)paraHZY {
-    [self accessoriesPerforHZYelector:@selector(requestWillStart:)];
+- (BOOL)shouldStartWithParams:(NSDictionary *)params {
+    [self accessoriesPerformSelector:@selector(requestWillStart:)];
     return YES;
 }
 
-- (void)afterStartWithParaHZY:(NSDictionary *)paraHZY {}
+- (void)afterStartWithParams:(NSDictionary *)params {}
 
 #pragma mark - Private method
 
 - (void)failedResponse {
-    if (self.delegateFlag.requestDidFailed) {[self.delegate requestDidFailed:self];}
-    if (self.failureBlock) {self.failureBlock(self);}
+    if (self.delegateFlag.requestDidFailed) {
+        [self.delegate request:self failWithResponse:self.response];
+    } else if (self.failureBlock) {
+        self.failureBlock(self.response);
+    }
 }
 
 - (void)successResponse {
-    if (self.delegateFlag.requestDidSuccess) {[self.delegate requestDidSuccess:self];}
-    if (self.successBlock) {self.successBlock(self);}
+    if (self.delegateFlag.requestDidSuccess) {
+        [self.delegate request:self successWithResponse:self.response];
+    } else if (self.successBlock) {
+        self.successBlock(self.response);
+    }
 }
 
 /**
@@ -181,7 +186,7 @@ typedef struct _DelegateFlags{
  
  @return 是否终止当前请求，YES终止，NO执行
  */
-- (BOOL)perforHZYtrategy {
+- (BOOL)performStrategy {
     switch (self.strategy) {
         case HZYNetworkRequestStrategyDiscardIfPreviousOnLoading:
             if (self.isLoading) {return YES;}
@@ -214,8 +219,8 @@ typedef struct _DelegateFlags{
 - (void)setDelegate:(id<HZYNetworkRequestDelegate>)delegate {
     _delegate = delegate;
     if (_delegate) {
-        _delegateFlag.requestDidSuccess = [_delegate respondsToSelector:@selector(requestDidSuccess:)];
-        _delegateFlag.requestDidFailed = [_delegate respondsToSelector:@selector(requestDidFailed:)];
+        _delegateFlag.requestDidSuccess = [_delegate respondsToSelector:@selector(request:successWithResponse:)];
+        _delegateFlag.requestDidFailed = [_delegate respondsToSelector:@selector(request:failWithResponse:)];
         _delegateFlag.uploadProgress = [_delegate respondsToSelector:@selector(request:uploadProgress:)];
         _delegateFlag.downloadProgress = [_delegate respondsToSelector:@selector(request:downloadProgress:)];        
     }
