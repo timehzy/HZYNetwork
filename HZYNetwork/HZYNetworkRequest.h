@@ -141,7 +141,7 @@ typedef NS_ENUM(NSUInteger, HZYNetworkParameterType) {
 /**
  这个代理提供了请求成功和失败的回调，以及上传和下载进度的回调
  */
-@protocol HZYNetworkRequestDelegate<NSObject>
+@protocol HZYNetworkRequestDelegate <NSObject>
 
 @optional
 
@@ -155,7 +155,7 @@ typedef NS_ENUM(NSUInteger, HZYNetworkParameterType) {
 /**
  这是请求的参数数据源，对于有参数的请求需要通过该方法来返回请求参数
  */
-@protocol HZYNetworkRequestParameterSource<NSObject>
+@protocol HZYNetworkRequestParameterSource <NSObject>
 
 @optional
 
@@ -168,7 +168,7 @@ typedef NS_ENUM(NSUInteger, HZYNetworkParameterType) {
 /**
  参数验证协议，提供对请求参数的验证和请求响应的验证
  */
-@protocol HZYNetworkRequestValidator<NSObject>
+@protocol HZYNetworkRequestValidator <NSObject>
 
 @optional
 
@@ -180,7 +180,7 @@ typedef NS_ENUM(NSUInteger, HZYNetworkParameterType) {
 /**
  响应内容自定义处理的协议，通过该方法获取指定请求的响应，并作出自定义的处理，并返回处理后的响应对象
  */
-@protocol HZYNetworkResponseReformer<NSObject>
+@protocol HZYNetworkResponseReformer <NSObject>
 
 - (id)request:(HZYNetworkRequest *)request reformResponseObject:(id)responseObject error:(NSError **)error;
 
